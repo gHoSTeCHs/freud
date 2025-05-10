@@ -1,1 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+	--font-sans: 'Urbanist', ui-sans-serif, system-ui, sans-serif,
+		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-sm: calc(var(--radius) - 4px);
+
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+
+	--color-chart-1: var(--chart-1);
+	--color-chart-2: var(--chart-2);
+	--color-chart-3: var(--chart-3);
+	--color-chart-4: var(--chart-4);
+	--color-chart-5: var(--chart-5);
+	--color-chart-6: var(--chart-6);
+
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
+
+	--color-brown-10: #f7f4f2;
+	--color-brown-20: #e0d0c9;
+	--color-brown-30: #d6c2b8;
+	--color-brown-40: #c6ad9f;
+	--color-brown-50: #ac8c6c;
+	--color-brown-60: #926247;
+	--color-brown-70: #704a33;
+	--color-brown-80: #5f4a22;
+	--color-brown-90: #372315;
+	--color-brown-100: #2f2315;
+
+	--color-gray-10: #f5f5f5;
+	--color-gray-20: #e1e1e0;
+	--color-gray-30: #c7c7c5;
+	--color-gray-40: #acaca5;
+	--color-gray-50: #92908b;
+	--color-gray-60: #736b6b;
+	--color-gray-70: #5a5a5e;
+	--color-gray-80: #3f3c38;
+	--color-gray-90: #2f2f2f;
+	--color-gray-100: #1b1513;
+
+	--color-green-10: #f2f5eb;
+	--color-green-20: #e5ead7;
+	--color-green-30: #cfd7b5;
+	--color-green-40: #b4c48d;
+	--color-green-50: #9bb068;
+	--color-green-60: #7d944d;
+	--color-green-70: #5a6b38;
+	--color-green-80: #3d4a26;
+	--color-green-90: #29321a;
+	--color-green-100: #1f1e10;
+
+	--color-orange-10: #ffeee2;
+	--color-orange-20: #ffc89e;
+	--color-orange-30: #f6a360;
+	--color-orange-40: #ed7e1c;
+	--color-orange-50: #c96100;
+	--color-orange-60: #aa5500;
+	--color-orange-70: #894700;
+	--color-orange-80: #663600;
+	--color-orange-90: #432500;
+	--color-orange-100: #2e1d00;
+
+	--color-yellow-10: #fff4e0;
+	--color-yellow-20: #ffebc2;
+	--color-yellow-30: #ffd88f;
+	--color-yellow-40: #ffce5c;
+	--color-yellow-50: #fdb01a;
+	--color-yellow-60: #e0a500;
+	--color-yellow-70: #a37a00;
+	--color-yellow-80: #705600;
+	--color-yellow-90: #3a2d00;
+	--color-yellow-100: #2e2500;
+
+	--color-purple-10: #f6f4ff;
+	--color-purple-20: #dddbff;
+	--color-purple-30: #c2b1ff;
+	--color-purple-40: #a694ff;
+	--color-purple-50: #8978e1;
+	--color-purple-60: #6c5fc8;
+	--color-purple-70: #5349a5;
+	--color-purple-80: #3c357c;
+	--color-purple-90: #2e2950;
+	--color-purple-100: #161324;
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-border, currentColor);
+	}
+}
+
+:root {
+	--background: var(--color-brown-10);
+	--foreground: var(--color-gray-100);
+	--card: var(--color-brown-10);
+	--card-foreground: var(--color-gray-100);
+	--popover: var(--color-brown-10);
+	--popover-foreground: var(--color-gray-100);
+	--primary: var(--color-brown-70);
+	--primary-foreground: var(--color-brown-10);
+	--secondary: var(--color-brown-20);
+	--secondary-foreground: var(--color-brown-80);
+	--muted: var(--color-gray-20);
+	--muted-foreground: var(--color-gray-70);
+	--accent: var(--color-green-30);
+	--accent-foreground: var(--color-green-90);
+	--destructive: var(--color-orange-60);
+	--destructive-foreground: var(--color-orange-10);
+	--border: var(--color-gray-30);
+	--input: var(--color-gray-30);
+	--ring: var(--color-brown-60);
+	--chart-1: var(--color-green-60);
+	--chart-2: var(--color-orange-50);
+	--chart-3: var(--color-yellow-50);
+	--chart-4: var(--color-purple-50);
+	--chart-5: var(--color-brown-50);
+	--chart-6: var(--color-gray-50);
+	--radius: 0.625rem;
+	--sidebar: var(--color-gray-10);
+	--sidebar-foreground: var(--color-gray-100);
+	--sidebar-primary: var(--color-brown-70);
+	--sidebar-primary-foreground: var(--color-brown-10);
+	--sidebar-accent: var(--color-brown-20);
+	--sidebar-accent-foreground: var(--color-brown-80);
+	--sidebar-border: var(--color-gray-30);
+	--sidebar-ring: var(--color-brown-60);
+}
+
+.dark {
+	--background: var(--color-gray-100);
+	--foreground: var(--color-brown-10);
+	--card: var(--color-gray-90);
+	--card-foreground: var(--color-brown-10);
+	--popover: var(--color-gray-90);
+	--popover-foreground: var(--color-brown-10);
+	--primary: var(--color-brown-30);
+	--primary-foreground: var(--color-gray-100);
+	--secondary: var(--color-gray-80);
+	--secondary-foreground: var(--color-brown-10);
+	--muted: var(--color-gray-80);
+	--muted-foreground: var(--color-gray-40);
+	--accent: var(--color-green-80);
+	--accent-foreground: var(--color-green-20);
+	--destructive: var(--color-orange-50);
+	--destructive-foreground: var(--color-orange-10);
+	--border: var(--color-gray-80);
+	--input: var(--color-gray-80);
+	--ring: var(--color-brown-40);
+	--chart-1: var(--color-green-40);
+	--chart-2: var(--color-orange-40);
+	--chart-3: var(--color-yellow-40);
+	--chart-4: var(--color-purple-40);
+	--chart-5: var(--color-brown-40);
+	--chart-6: var(--color-gray-40);
+	--sidebar: var(--color-gray-90);
+	--sidebar-foreground: var(--color-brown-10);
+	--sidebar-primary: var(--color-brown-30);
+	--sidebar-primary-foreground: var(--color-gray-100);
+	--sidebar-accent: var(--color-gray-80);
+	--sidebar-accent-foreground: var(--color-brown-10);
+	--sidebar-border: var(--color-gray-80);
+	--sidebar-ring: var(--color-brown-40);
+}
