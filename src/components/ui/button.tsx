@@ -6,13 +6,13 @@ const buttonVariants = cva(
 	{
 		variants: {
 			variant: {
-				primary: 'bg-[var(--color-brown-70)] text-[var(--color-brown-10)]',
+				primary: 'bg-[var(--color-brown-80)] text-[var(--color-brown-10)]',
 				secondary: 'bg-[var(--color-brown-20)] text-[var(--color-brown-80)]',
 				light:
-					'bg-[var(--color-brown-10)] text-[var(--color-brown-70)] border border-[var(--color-brown-20)]',
+					'bg-[var(--color-brown-10)] text-[var(--color-brown-80)] border border-[var(--color-brown-20)]',
 				accent: 'bg-[var(--color-orange-50)] text-white',
 				outline:
-					'bg-transparent text-[var(--color-brown-70)] border border-[var(--color-brown-70)]',
+					'bg-transparent text-[var(--color-brown-80)] border border-[var(--color-brown-80)]',
 				outlineLight:
 					'bg-transparent text-[var(--color-brown-30)] border border-[var(--color-brown-30)]',
 			},
