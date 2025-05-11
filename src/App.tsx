@@ -1,14 +1,17 @@
-import Buttons2Section from './sections/Buttons2Section';
-import ButtonSection from './sections/ButtonSection';
-import { InputsSection } from './sections/InputsSection';
+import { BrowserRouter, Route, Routes } from 'react-router';
+import Home from './pages/tabs/Home';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
 
 function App() {
 	return (
-		<div className="p-8 bg-[var(--color-brown-10)] font-sans space-y-6">
-			<ButtonSection />
-			<Buttons2Section />
-			<InputsSection />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/register" element={<Register />} />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
