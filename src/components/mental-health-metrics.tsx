@@ -68,7 +68,6 @@ const MoodBarChart = ({ mood, color }: { mood: string; color: string }) => {
 	);
 };
 
-// Component for the dot grid used in Health Journal
 const HealthJournal = ({
 	days,
 	totalDays,
@@ -213,7 +212,7 @@ const MentalHealthMetrics = ({
 						title="Health Journal"
 						value={journalDays}
 						totalDays={totalDays}
-						bgColor="#8978E1" // purple-50
+						bgColor="#8978E1"
 						icon={<FileText className="text-white" />}
 					/>
 				</div>
