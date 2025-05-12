@@ -38,10 +38,7 @@ const radioButtonVariants = cva(
 );
 
 export interface RadioButtonProps
-	extends Omit<
-			React.InputHTMLAttributes<HTMLInputElement>,
-			'size' | 'onChange'
-		>,
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		VariantProps<typeof radioButtonVariants> {
 	label: string;
 	icon?: React.ReactNode;
@@ -55,7 +52,7 @@ const RadioButton = React.forwardRef<HTMLInputElement, RadioButtonProps>(
 	(
 		{
 			className,
-			variant: _variantProp, // Prefix with underscore to indicate intentionally unused
+			variant: variantProp,
 			size,
 			shape,
 			label,

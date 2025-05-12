@@ -18,11 +18,11 @@ const toggleVariants = cva('relative inline-flex items-center cursor-pointer', {
 		size: 'md',
 		color: 'primary',
 	},
-} as const);
+});
 
 const getSliderStyles = (
 	checked: boolean,
-	color: NonNullable<VariantProps<typeof toggleVariants>['color']> | undefined
+	color: 'primary' | 'green' | 'beige'
 ) => {
 	const baseStyles = 'absolute rounded-full transition-all duration-200';
 	const backgroundStyles = checked
@@ -36,15 +36,12 @@ const getSliderStyles = (
 	return `${baseStyles} ${backgroundStyles}`;
 };
 
-const getCircleStyles = (
-	checked: boolean,
-	size: NonNullable<VariantProps<typeof toggleVariants>['size']> | undefined
-) => {
+const getCircleStyles = (checked: boolean, size: 'sm' | 'md' | 'lg') => {
 	const sizeClasses = {
 		sm: checked ? 'left-5' : 'left-0.5',
 		md: checked ? 'left-6' : 'left-0.5',
 		lg: checked ? 'left-7' : 'left-0.5',
-	} as const;
+	};
 
 	const dimensions = {
 		sm: 'h-4 w-4',
@@ -52,13 +49,11 @@ const getCircleStyles = (
 		lg: 'h-6 w-6',
 	};
 
-	return `absolute ${sizeClasses[size || 'md']} top-0.5 ${
-		dimensions[size || 'md']
-	} bg-white rounded-full transition-all duration-200 shadow-md`;
+	return `absolute ${sizeClasses[size]} top-0.5 ${dimensions[size]} bg-white rounded-full transition-all duration-200 shadow-md`;
 };
 
 export interface ToggleButtonProps
-	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'color'>,
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
 		VariantProps<typeof toggleVariants> {
 	label?: React.ReactNode;
 	sublabel?: string;
