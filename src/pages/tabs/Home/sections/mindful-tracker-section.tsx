@@ -118,7 +118,7 @@ const MindfulTrackerSection: React.FC = () => {
 	// );
 
 	return (
-		<div className="max-w-lg mx-auto p-4 space-y-4">
+		<div className="max-w-lg mx-auto p-4 ">
 			<h2 className="text-2xl font-bold text-[var(--color-brown-80)] mb-3 overflow-hidden">
 				Mindful Tracker
 			</h2>

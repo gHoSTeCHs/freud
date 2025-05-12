@@ -17,3 +17,11 @@ export interface MetricCardProps {
 export interface MentalHealthCarouselProps {
 	metrics: MetricData[];
 }
+
+export interface ArticleComponentProps {
+	title: string;
+	tag: string;
+	likes: number;
+	views: number;
+	image: string;
+}

@@ -4,6 +4,8 @@ const TrackerComponent = ({
 	bg = 'white',
 	leftComponent,
 	leftComponentBg,
+	leftComponentWidth,
+	leftComponentRadius,
 	header,
 	middleComponent,
 	description,
@@ -12,6 +14,8 @@ const TrackerComponent = ({
 	bg?: string;
 	leftComponent: React.ReactNode;
 	leftComponentBg?: string;
+	leftComponentWidth?: string;
+	leftComponentRadius?: string;
 	header: string;
 	middleComponent?: React.ReactNode;
 	description: string;
@@ -24,7 +28,11 @@ const TrackerComponent = ({
 			} mb-4`}>
 			<div className=" flex items-center gap-4">
 				<div
-					className={`${leftComponentBg} flex-shrink-0 w-16 h-16 rounded-[24px] flex items-center justify-center bg-opacity-20`}>
+					className={`${leftComponentBg} flex-shrink-0 ${
+						leftComponentWidth ? leftComponentWidth : 'w-16'
+					} h-16 ${
+						leftComponentRadius ? leftComponentRadius : 'rounded-[24px]'
+					} flex items-center justify-center bg-opacity-20`}>
 					{leftComponent}
 				</div>
 

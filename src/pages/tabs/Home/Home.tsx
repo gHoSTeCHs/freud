@@ -4,6 +4,7 @@ import MainLayout from '../layout/main-layout';
 import PersonalSection from './sections/personal-section';
 import MentalHealthCarousel from './sections/mental-health-carousel';
 import MindfulTrackerSection from './sections/mindful-tracker-section';
+import ArticlesSection from './sections/articles-section';
 
 const Home = () => {
 	const sampleMetrics: MetricData[] = [
@@ -54,6 +55,7 @@ const Home = () => {
 				<PersonalSection />
 				<MentalHealthCarousel metrics={sampleMetrics} />
 				<MindfulTrackerSection />
+				<ArticlesSection />
 			</div>
 		</MainLayout>
 	);
