@@ -28,7 +28,7 @@ const MoodInput = () => {
 		e.preventDefault();
 
 		console.log({ level: moodLevel, notes });
-		// Navigate back to mood history after submission
+
 		navigate('/mood-history');
 	};
 
