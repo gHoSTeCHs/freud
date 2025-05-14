@@ -1,8 +1,14 @@
 import BottomNavigation from '../../../components/bottom-navigation';
 
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+const MainLayout = ({
+	children,
+	bg,
+}: {
+	children: React.ReactNode;
+	bg?: string;
+}) => {
 	return (
-		<div className="">
+		<div className={`${bg}`}>
 			{children}
 			<BottomNavigation />
 		</div>

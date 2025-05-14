@@ -13,7 +13,7 @@ const Home = () => {
 			type: 'freud',
 			title: 'Freud Score',
 			value: 80,
-			bgColor: '#9BB068', // green-50
+			bgColor: '#9BB068',
 			icon: <Heart className="text-white" size={20} />,
 		},
 		{
@@ -21,7 +21,7 @@ const Home = () => {
 			type: 'mood',
 			title: 'Mood',
 			value: 'Sad',
-			bgColor: '#ED7E1C', // orange-40
+			bgColor: '#ED7E1C',
 			icon: <Smile className="text-white" size={20} />,
 		},
 		{
@@ -29,7 +29,7 @@ const Home = () => {
 			type: 'journal',
 			title: 'Health Journal',
 			value: 31,
-			bgColor: '#8978E1', // purple-50
+			bgColor: '#8978E1',
 			icon: <FileText className="text-white" size={20} />,
 		},
 		{
@@ -37,7 +37,7 @@ const Home = () => {
 			type: 'sleep',
 			title: 'Sleep Quality',
 			value: 75,
-			bgColor: '#6C5FC8', // purple-60
+			bgColor: '#6C5FC8',
 			icon: null,
 		},
 		{
@@ -50,7 +50,7 @@ const Home = () => {
 		},
 	];
 	return (
-		<MainLayout>
+		<MainLayout bg="bg-brown-10">
 			<div className="space-y-6">
 				<PersonalSection />
 				<MentalHealthCarousel metrics={sampleMetrics} />
